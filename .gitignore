@@ -1,3 +1,5 @@
 .venv
 *.pkl
 *.zip
+.idea
+.ipynb_checkpoints
