@@ -37,14 +37,14 @@ def load_model_components():
         with open('feature_names.pkl', 'rb') as file:
             feature_names = pickle.load(file)
 
-        print(f"✅ Model loaded successfully: {model_info['model_name']}")
-        print(f"✅ Number of features: {len(feature_names)}")
-        print(f"✅ Uses scaler: {model_info['uses_scaler']}")
+        print(f"Model loaded successfully: {model_info['model_name']}")
+        print(f"Number of features: {len(feature_names)}")
+        print(f"Uses scaler: {model_info['uses_scaler']}")
 
         return True
 
     except Exception as e:
-        print(f"❌ Error loading model components: {e}")
+        print(f"Error loading model components: {e}")
         return False
 
 
@@ -171,15 +171,15 @@ def health_check():
 
 
 if __name__ == '__main__':
-    print("🚀 Starting Vietnam Housing Price Predictor...")
+    print("Starting Vietnam Housing Price Predictor...")
 
     # Load model components
     if load_model_components():
-        print("🌟 Server ready!")
-        print("📍 Access the application at: http://localhost:5000")
+        print("Server ready!")
+        print("Access the application at: http://localhost:5000")
         app.run(debug=True, host='0.0.0.0', port=5000)
     else:
-        print("❌ Failed to load model. Please check your model files.")
+        print("Failed to load model. Please check your model files.")
         print("Required files:")
         print("  - model_info.pkl")
         print("  - vietnam_housing_price_model_*.pkl")
